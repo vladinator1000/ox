@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>For Oxide</title>
+    <style>
+      :root {
+        --oxide: #48D597;
+        --gold: #F5CF65;
+      }
+
+      body {
+        font-family: Clacon, Calibri;
+        background-color: #0B1418;
+        color: #c7c7c7;
+      }
+
+      @font-face {
+        font-family: "Clacon";
+        src: url('fonts/clacon2.woff2') format('woff2');
+      }
+      .container {
+        font-size: x-large;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        padding: 2px;
+      } 
+      .greeting {
+        font-weight: 100;
+        font-size: medium;
+        color: #FFFFFF
+      }
+      .hint {
+        font-weight: 100;
+        font-size: medium;
+      }
+
+      #card { 
+        color: var(--gold);
+        
+        width: 480px;
+        height: auto;
+        
+        padding: 14px;
+        padding-right: 0px;
+        border: 3px dashed var(--oxide);
+      }
+
+    </style>
+  </head>
+  <body>
+    <noscript>This page contains WebAssembly and JavaScript, please enable JavaScript in your browser.</noscript>
+    <div class="container">
+      <span class="greeting">To 0xide, from Vlady (please scratch)</span>
+      <p id="card"></p>
+      <span class="hint">vladyv@protonmail.com</span>
+      <a class="hint" href="">source</a>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
