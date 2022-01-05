@@ -21,15 +21,10 @@
 
         height: 100%;
         width: 100%;
-        
+
         font-family: Clacon, Calibri;
         background-color: #0B1418;
         color: #c7c7c7;
-
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
       }
      
       a {
@@ -76,15 +71,21 @@
         }
       }
 
+      .no-user-select {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
     </style>
   </head>
   <body>
     <noscript>This page contains WebAssembly and JavaScript, please enable JavaScript in your browser.</noscript>
     <div class="container">
-      <span class="greeting">To 0xide, from Vlady (please scratch)</span>
-      <p id="card"></p>
+      <span class="greeting no-user-select">To 0xide, from Vlady (please scratch)</span>
+      <p id="card" class="no-user-select"></p>
       <span class="hint">vladyv@protonmail.com</span>
-      <a class="hint" href="https://github.com/vladinator1000/ox" target="_blank">source</a>
+      <a class="hint no-user-select" href="https://github.com/vladinator1000/ox" target="_blank">source</a>
     </div>
     <script src="index.js"></script>
   </body>
