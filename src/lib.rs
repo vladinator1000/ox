@@ -105,7 +105,6 @@ const HEIGHT_COMPENSATION: f64 = (GLYPH_HEIGHT + LINE_SPACING) / 868.0;
 fn calc_mask_index_1d(x: f64, y: f64) -> usize {
     let x_index = (x * WIDTH_COMPENSATION) as usize - 1;
     let y_index = (y * HEIGHT_COMPENSATION) as usize;
-    gloo::console::log!(x_index, y_index, y_index * WIDTH + x_index);
     y_index * WIDTH + x_index
 }
 
