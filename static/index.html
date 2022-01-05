@@ -14,7 +14,14 @@
         src: url('fonts/clacon2.woff2') format('woff2');
       }
 
-      body {
+      html, body {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+
+        height: 100%;
+        width: 100%;
+        
         font-family: Clacon, Calibri;
         background-color: #0B1418;
         color: #c7c7c7;
@@ -35,6 +42,7 @@
         align-items: center;
         justify-items: center;
         padding: 2px;
+        height:fit-content;
       } 
 
       .greeting {
@@ -64,7 +72,6 @@
         /* Disable scroll */
         html body {
           margin: 0;
-          height: 100%;
           overflow: hidden;
         }
       }

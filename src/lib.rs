@@ -27,6 +27,7 @@ fn start_rendering_loop() {
     let card = document.get_element_by_id("card").unwrap();
 
     let is_mouse_down = Rc::new(RefCell::new(false));
+    // To appease the borrow check gods
     let is_mouse_down_cloned = Rc::clone(&is_mouse_down);
     let is_mouse_down_cloned_2 = Rc::clone(&is_mouse_down);
 
@@ -39,9 +40,6 @@ fn start_rendering_loop() {
         *is_mouse_down_cloned.borrow_mut() = false;
     })
     .forget();
-
-    let mouse_x = Rc::new(RefCell::new(0.0_f64));
-    let mouse_y = Rc::new(RefCell::new(0.0_f64));
 
     let mask: Mask = [false; AREA];
     let mask = Rc::new(RefCell::new(mask));
@@ -59,13 +57,11 @@ fn start_rendering_loop() {
         let x = (event.client_x() as f64) - rect.left();
         let y = (event.client_y() as f64) - rect.top();
 
-        *mouse_x.borrow_mut() = x;
-        *mouse_y.borrow_mut() = y;
-
         let mask_index: usize = calc_mask_index_1d(x, y);
 
         if *is_mouse_down_cloned_2.borrow() && mask_index < AREA {
             let mut borrowed_mask = *mask.borrow_mut();
+            // "Scratch" the card
             borrowed_mask[mask_index] = true;
             *mask.borrow_mut() = borrowed_mask;
         }
@@ -146,7 +142,7 @@ fn get_characters(mask: Mask) -> Characters {
             let is_message_index = x_index > PADDING && y_index != 0 && y_index != sentence.len();
             let is_even = x_index % 2 == 0;
 
-            let ferrous_character = match is_even {
+            let ferrum_character = match is_even {
                 true => 'e',
                 false => 'F',
             };
@@ -161,10 +157,10 @@ fn get_characters(mask: Mask) -> Characters {
                     let row_has_character = x_index < message_row.len();
                     match row_has_character {
                         true => message_row[x_index] as char,
-                        false => ferrous_character,
+                        false => ferrum_character,
                     }
                 } else {
-                    ferrous_character
+                    ferrum_character
                 }
             } else {
                 oxide_character
