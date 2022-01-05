@@ -9,6 +9,11 @@
         --gold: #F5CF65;
       }
 
+      @font-face {
+        font-family: "Clacon";
+        src: url('fonts/clacon2.woff2') format('woff2');
+      }
+
       body {
         font-family: Clacon, Calibri;
         background-color: #0B1418;
@@ -20,9 +25,12 @@
         user-select: none;
       }
 
-      @font-face {
-        font-family: "Clacon";
-        src: url('fonts/clacon2.woff2') format('woff2');
+      html.touch body {
+        overflow: hidden;
+      }
+     
+      a {
+        color: var(--oxide)
       }
 
       .container {
@@ -58,10 +66,6 @@
       #warning {
         display: none;
         text-align: center;
-      }
-
-      a {
-        color: var(--oxide)
       }
 
       @media screen and (max-width: 1000px) {
