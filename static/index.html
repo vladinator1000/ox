@@ -25,9 +25,7 @@
         user-select: none;
       }
 
-      html.touch body {
-        overflow: hidden;
-      }
+
      
       a {
         color: var(--oxide)
@@ -71,6 +69,13 @@
       @media screen and (max-width: 1000px) {
         #warning {
             display: block;
+        }
+
+        /* Disable scroll */
+        html body {
+          margin: 0;
+          height: 100%;
+          overflow: hidden;
         }
       }
 
