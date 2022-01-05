@@ -40,6 +40,7 @@
       } 
 
       .greeting {
+        margin-top: 30px;
         font-weight: 100;
         font-size: medium;
         color: #FFFFFF
@@ -61,16 +62,7 @@
         border: 3px dashed var(--oxide);
       }
 
-      #warning {
-        display: none;
-        text-align: center;
-      }
-
       @media screen and (max-width: 1000px) {
-        #warning {
-            display: block;
-        }
-
         /* Disable scroll */
         html body {
           margin: 0;
@@ -88,10 +80,6 @@
       <p id="card"></p>
       <span class="hint">vladyv@protonmail.com</span>
       <a class="hint" href="https://github.com/vladinator1000/ox" target="_blank">source</a>
-      <p id="warning">
-        Hi, I see you're on a small screen, <br/>
-        the experience will likely feel better on desktop.
-      </p>
     </div>
     <script src="index.js"></script>
   </body>
