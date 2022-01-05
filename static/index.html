@@ -24,6 +24,7 @@
         font-family: "Clacon";
         src: url('fonts/clacon2.woff2') format('woff2');
       }
+
       .container {
         font-size: x-large;
         display: grid;
@@ -31,11 +32,13 @@
         justify-items: center;
         padding: 2px;
       } 
+
       .greeting {
         font-weight: 100;
         font-size: medium;
         color: #FFFFFF
       }
+      
       .hint {
         font-weight: 100;
         font-size: medium;
@@ -52,15 +55,34 @@
         border: 3px dashed var(--oxide);
       }
 
+      #warning {
+        display: none;
+        text-align: center;
+      }
+
+      a {
+        color: var(--oxide)
+      }
+
+      @media screen and (max-width: 1000px) {
+        #warning {
+            display: block;
+        }
+      }
+
     </style>
   </head>
   <body>
     <noscript>This page contains WebAssembly and JavaScript, please enable JavaScript in your browser.</noscript>
     <div class="container">
-      <span class="greeting">To 0xide, from Vlady (please scratch, desktop only)</span>
+      <span class="greeting">To 0xide, from Vlady</span>
       <p id="card"></p>
       <span class="hint">vladyv@protonmail.com</span>
       <a class="hint" href="https://github.com/vladinator1000/ox" target="_blank">source</a>
+      <p id="warning">
+        Hi, I see you're on a small screen, <br/>
+        the experience will likely feel better on desktop.
+      </p>
     </div>
     <script src="index.js"></script>
   </body>

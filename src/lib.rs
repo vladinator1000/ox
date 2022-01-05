@@ -30,12 +30,12 @@ fn start_rendering_loop() {
     let is_mouse_down_cloned = Rc::clone(&is_mouse_down);
     let is_mouse_down_cloned_2 = Rc::clone(&is_mouse_down);
 
-    let _on_mouse_down = EventListener::new(&document, "mousedown", move |_event| {
+    let _on_mouse_down = EventListener::new(&document, "pointerdown", move |_event| {
         *is_mouse_down.borrow_mut() = true;
     })
     .forget(); // Listen forever
 
-    let _on_mouse_up = EventListener::new(&document, "mouseup", move |_event| {
+    let _on_mouse_up = EventListener::new(&document, "pointerup", move |_event| {
         *is_mouse_down_cloned.borrow_mut() = false;
     })
     .forget();
@@ -47,7 +47,7 @@ fn start_rendering_loop() {
     let mask = Rc::new(RefCell::new(mask));
     let mask_cloned = Rc::clone(&mask);
 
-    let _on_mouse_move = EventListener::new(&card, "mousemove", move |e| {
+    let _on_mouse_move = EventListener::new(&card, "pointermove", move |e| {
         let event = e.dyn_ref::<web_sys::MouseEvent>().unwrap_throw();
         let rect = event
             .target()
