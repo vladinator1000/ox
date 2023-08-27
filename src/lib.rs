@@ -120,9 +120,9 @@ fn render(target: &Element, mask: Ref<Mask>) {
 const MESSAGE: [&str; HEIGHT] = [
     "",
     "    Dear people at Oxide, ",
-    "    you are an inspiration! ",
-    "    It'd be a dream to work with you. ",
-    "    Would you like to meet? ",
+    "    you inspire me! ",
+    "    Would you like to ",
+    "    change computing forever together? ",
     "",
 ];
 
